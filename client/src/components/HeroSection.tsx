@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import twoBoys from '../assets/two-boys.jpeg';
 
 // SVG Components directly in this file for simplicity
 function GreenLeftSidebar() {
@@ -135,7 +136,7 @@ export default function HeroSection() {
               {/* Two boys background image */}
               <div className="absolute inset-0 -top-20 z-10 pointer-events-none">
                 <img 
-                  src="/assets/two-boys.jpeg" 
+                  src={twoBoys} 
                   alt="Two fitness enthusiasts" 
                   className="object-contain object-right-top"
                   style={{ width: "100%", height: "100%" }}
