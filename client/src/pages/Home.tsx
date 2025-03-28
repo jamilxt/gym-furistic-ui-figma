@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import GymLocationsSection from "@/components/GymLocationsSection";
 import TrainingPrograms from "@/components/TrainingPrograms";
-import RegisterSection from "@/components/RegisterSection";
+import NewsletterSection from "@/components/NewsletterSection";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <FeaturedProducts />
       <GymLocationsSection />
       <TrainingPrograms />
-      <RegisterSection />
+      <NewsletterSection />
     </>
   );
 }
