@@ -14,7 +14,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
-            <div className="rounded-full bg-green-500 p-4 cursor-pointer">
+            <div className="rounded-full bg-green-500 p-3 cursor-pointer">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 9C8.10457 9 9 8.10457 9 7C9 5.89543 8.10457 5 7 5C5.89543 5 5 5.89543 5 7C5 8.10457 5.89543 9 7 9Z" fill="white"/>
                 <path d="M17 9C18.1046 9 19 8.10457 19 7C19 5.89543 18.1046 5 17 5C15.8954 5 15 5.89543 15 7C15 8.10457 15.8954 9 17 9Z" fill="white"/>
@@ -26,12 +26,12 @@ export default function Header() {
         </div>
         
         {/* Navigation */}
-        <div className="relative flex-1 max-w-md mx-auto">
-          <nav className="bg-primary rounded-full px-6 py-3 flex items-center text-white">
-            <div className="flex-1 flex justify-center space-x-8">
+        <div className="relative flex-1 max-w-sm mx-auto">
+          <nav className="bg-primary rounded-full px-6 py-2 flex items-center text-white">
+            <div className="flex-1 flex justify-center space-x-6">
               <Link href="/">
                 <span className={cn(
-                  "font-medium hover:text-white/80 transition-colors cursor-pointer",
+                  "text-sm font-medium hover:text-white/80 transition-colors cursor-pointer",
                   isActive("/") && "text-white font-semibold"
                 )}>
                   Home
@@ -39,7 +39,7 @@ export default function Header() {
               </Link>
               <Link href="/gym-locations">
                 <span className={cn(
-                  "font-medium hover:text-white/80 transition-colors cursor-pointer",
+                  "text-sm font-medium hover:text-white/80 transition-colors cursor-pointer",
                   isActive("/gym-locations") && "text-white font-semibold"
                 )}>
                   Our Gym Location
@@ -47,30 +47,30 @@ export default function Header() {
               </Link>
             </div>
             
-            <div className="flex items-center ml-4">
+            <div className="flex items-center ml-2">
               <div className="relative">
                 {searchActive ? (
                   <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center">
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="bg-transparent border-b border-white/30 text-white placeholder-white/50 outline-none px-2 py-1 w-32"
+                      className="bg-transparent border-b border-white/30 text-white placeholder-white/50 outline-none px-2 py-0.5 w-28 text-sm"
                       autoFocus
                     />
                     <button 
                       onClick={() => setSearchActive(false)}
-                      className="ml-2 text-white hover:text-white/80"
+                      className="ml-1 text-white hover:text-white/80"
                     >
-                      <X className="h-5 w-5" />
+                      <X className="h-4 w-4" />
                     </button>
                   </div>
                 ) : (
                   <button 
                     onClick={() => setSearchActive(true)}
-                    className="text-white hover:text-white/80 flex items-center"
+                    className="text-white hover:text-white/80 flex items-center text-sm"
                   >
-                    <span className="mr-2">Search</span>
-                    <Search className="h-5 w-5" />
+                    <span className="mr-1">Search</span>
+                    <Search className="h-4 w-4" />
                   </button>
                 )}
               </div>
@@ -81,7 +81,7 @@ export default function Header() {
         {/* Register button */}
         <div className="flex items-center">
           <Link href="/register">
-            <Button className="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2 font-semibold">
+            <Button className="bg-green-500 hover:bg-green-600 text-white rounded-full px-6 py-1.5 text-sm font-semibold">
               REGISTER
             </Button>
           </Link>
