@@ -45,7 +45,7 @@ export default function Header() {
           {/* Logo Circle */}
           <Link href="/">
             <motion.div 
-              className="bg-primary-green rounded-full w-16 h-16 md:w-24 md:h-24 flex items-center justify-center relative cursor-pointer"
+              className="bg-primary-orange rounded-full w-16 h-16 md:w-24 md:h-24 flex items-center justify-center relative cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -60,12 +60,12 @@ export default function Header() {
             <div className="border-2 border-white border-opacity-50 rounded-[3rem] px-8 py-4">
               <nav className="flex space-x-10">
                 <Link href="/">
-                  <span className={`text-white font-medium hover:text-primary-green transition duration-150 ${location === "/" ? "text-primary-green" : ""}`}>
+                  <span className={`text-white font-medium hover:text-primary-orange transition duration-150 ${location === "/" ? "text-primary-orange" : ""}`}>
                     Home
                   </span>
                 </Link>
                 <Link href="/locations">
-                  <span className={`text-white font-medium hover:text-primary-green transition duration-150 ${location === "/locations" ? "text-primary-green" : ""}`}>
+                  <span className={`text-white font-medium hover:text-primary-orange transition duration-150 ${location === "/locations" ? "text-primary-orange" : ""}`}>
                     Our Gym Location
                   </span>
                 </Link>
@@ -94,7 +94,7 @@ export default function Header() {
                   <ShoppingCart className="h-6 w-6" />
                 </Button>
                 {totalCartItems > 0 && (
-                  <Badge className="absolute -top-2 -right-2 bg-primary-green text-white">
+                  <Badge className="absolute -top-2 -right-2 bg-primary-orange text-white">
                     {totalCartItems}
                   </Badge>
                 )}
@@ -104,7 +104,7 @@ export default function Header() {
             {/* Registration Button */}
             <Link href="/register">
               <motion.div 
-                className="bg-primary-green rounded-[3rem] px-4 py-3 md:px-8 md:py-4"
+                className="bg-primary-orange rounded-[3rem] px-4 py-3 md:px-8 md:py-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -137,7 +137,7 @@ export default function Header() {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="bg-primary-green rounded-2xl p-4 mt-2">
+              <div className="bg-primary-orange rounded-2xl p-4 mt-2">
                 <nav className="flex flex-col space-y-3">
                   <Link href="/">
                     <span className="text-white font-medium cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
@@ -175,7 +175,7 @@ export default function Header() {
 
       {/* Search Dialog */}
       <Dialog open={searchOpen} onOpenChange={setSearchOpen}>
-        <DialogContent className="sm:max-w-[425px] bg-primary-green">
+        <DialogContent className="sm:max-w-[425px] bg-primary-orange">
           <h2 className="text-white text-xl font-bold mb-4">Search</h2>
           <form onSubmit={handleSearch} className="flex items-center gap-2">
             <Input 
@@ -185,7 +185,7 @@ export default function Header() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <Button type="submit" className="bg-white text-primary-green hover:bg-white/90">
+            <Button type="submit" className="bg-white text-primary-orange hover:bg-white/90">
               <Search className="h-4 w-4" />
             </Button>
           </form>

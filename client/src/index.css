@@ -4,11 +4,12 @@
 
 @layer base {
   :root {
-    --primary: 82 76% 38%;
-    --primary-dark: 82 76% 30%;
-    --accent: 14 99% 58%;
-    --accent-dark: 14 99% 50%;
-    --black: 0 0% 0%;
+    --primary: 14 99% 58%;       /* #FE552B - orange */
+    --primary-dark: 14 99% 50%;  /* Darker orange */
+    --secondary: 14 99% 58%;     /* Same as primary - #FE552B */
+    --secondary-dark: 14 99% 50%;
+    --accent: 0 0% 0%;           /* #000000 - black */
+    --accent-dark: 0 0% 10%;     /* Slight variation of black */
   }
 
   * {

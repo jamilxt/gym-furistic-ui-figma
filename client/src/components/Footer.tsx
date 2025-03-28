@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center mb-6">
-              <div className="bg-[#71AC16] rounded-full w-12 h-12 flex items-center justify-center mr-3">
+              <div className="bg-[#FE552B] rounded-full w-12 h-12 flex items-center justify-center mr-3">
                 <i className="fas fa-paper-plane transform -rotate-45 text-white"></i>
               </div>
               <span className="font-tilt text-2xl">PowerFit</span>
@@ -41,28 +41,28 @@ export default function Footer() {
             <h3 className="font-bold text-xl mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/">
-                  <a className="text-gray-400 hover:text-white transition duration-150">Home</a>
+                <Link href="/" className="text-gray-400 hover:text-white transition duration-150">
+                  <span>Home</span>
                 </Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className="text-gray-400 hover:text-white transition duration-150">About Us</a>
+                <Link href="/about" className="text-gray-400 hover:text-white transition duration-150">
+                  <span>About Us</span>
                 </Link>
               </li>
               <li>
-                <Link href="/classes">
-                  <a className="text-gray-400 hover:text-white transition duration-150">Classes</a>
+                <Link href="/classes" className="text-gray-400 hover:text-white transition duration-150">
+                  <span>Classes</span>
                 </Link>
               </li>
               <li>
-                <Link href="/shop">
-                  <a className="text-gray-400 hover:text-white transition duration-150">Shop</a>
+                <Link href="/shop" className="text-gray-400 hover:text-white transition duration-150">
+                  <span>Shop</span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a className="text-gray-400 hover:text-white transition duration-150">Contact</a>
+                <Link href="/contact" className="text-gray-400 hover:text-white transition duration-150">
+                  <span>Contact</span>
                 </Link>
               </li>
             </ul>
@@ -93,19 +93,19 @@ export default function Footer() {
             <h3 className="font-bold text-xl mb-6">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin className="mt-1 mr-3 text-[#71AC16] h-5 w-5" />
+                <MapPin className="mt-1 mr-3 text-[#FE552B] h-5 w-5" />
                 <span className="text-gray-400">123 Fitness Street, New York, NY 10001</span>
               </li>
               <li className="flex items-center">
-                <Phone className="mr-3 text-[#71AC16] h-5 w-5" />
+                <Phone className="mr-3 text-[#FE552B] h-5 w-5" />
                 <span className="text-gray-400">(123) 456-7890</span>
               </li>
               <li className="flex items-center">
-                <Mail className="mr-3 text-[#71AC16] h-5 w-5" />
+                <Mail className="mr-3 text-[#FE552B] h-5 w-5" />
                 <span className="text-gray-400">info@powerfit.com</span>
               </li>
               <li className="flex items-start">
-                <Clock className="mt-1 mr-3 text-[#71AC16] h-5 w-5" />
+                <Clock className="mt-1 mr-3 text-[#FE552B] h-5 w-5" />
                 <span className="text-gray-400">Mon-Fri: 5am-11pm<br/>Sat-Sun: 7am-9pm</span>
               </li>
             </ul>

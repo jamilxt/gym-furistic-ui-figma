@@ -30,16 +30,16 @@ export default function HeroSection() {
         <div className="flex flex-col items-start">
           <span className="text-white font-tilt text-xl mb-4">Follow On:</span>
           <div className="flex space-x-4">
-            <a href="#" className="text-white hover:text-primary-green transition duration-150">
+            <a href="#" className="text-white hover:text-primary-orange transition duration-150">
               <i className="fab fa-instagram text-2xl"></i>
             </a>
-            <a href="#" className="text-white hover:text-primary-green transition duration-150">
+            <a href="#" className="text-white hover:text-primary-orange transition duration-150">
               <i className="fab fa-twitter text-2xl"></i>
             </a>
-            <a href="#" className="text-white hover:text-primary-green transition duration-150">
+            <a href="#" className="text-white hover:text-primary-orange transition duration-150">
               <i className="fab fa-facebook text-2xl"></i>
             </a>
-            <a href="#" className="text-white hover:text-primary-green transition duration-150">
+            <a href="#" className="text-white hover:text-primary-orange transition duration-150">
               <i className="fab fa-linkedin text-2xl"></i>
             </a>
           </div>
@@ -52,7 +52,7 @@ export default function HeroSection() {
           <path d="M0 0H1440V300C1440 300 1200 400 720 400C240 400 0 300 0 300V0Z" fill="url(#gradient)" opacity="0.15"/>
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#71AC16" />
+              <stop offset="0%" stopColor="#FE552B" />
               <stop offset="100%" stopColor="#FE552B" />
             </linearGradient>
           </defs>
@@ -84,7 +84,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Power Your <span className="text-primary-green">Potential</span>
+            Power Your <span className="text-primary-orange">Potential</span>
           </motion.h1>
           
           <motion.p 
