@@ -1,5 +1,5 @@
 import HeroSection from "@/components/HeroSection";
-import FeaturedProducts from "@/components/FeaturedProducts";
+import OurProductsSection from "@/components/OurProductsSection";
 import TrainLikeChampionSection from "@/components/TrainLikeChampionSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <FeaturedProducts />
+      <OurProductsSection />
       <TrainLikeChampionSection />
       <TestimonialsSection />
       <NewsletterSection />

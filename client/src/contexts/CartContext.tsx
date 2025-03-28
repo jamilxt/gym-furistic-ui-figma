@@ -3,11 +3,12 @@ import { createContext, useReducer, useEffect, ReactNode } from "react";
 interface Product {
   id: number;
   name: string;
-  description: string;
+  description?: string;
   price: number;
   image: string;
   isNew?: boolean;
   isSale?: boolean;
+  quantity?: number;
 }
 
 interface CartItem extends Product {
