@@ -1,4 +1,4 @@
-[[redirects]]
-from = "/*"
-to = "/"
-status = 200
+[[headers]]
+  for = "/*.html"
+    [headers.values]
+      Cache-Control = "no-store"
