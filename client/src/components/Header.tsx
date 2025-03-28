@@ -60,12 +60,12 @@ export default function Header() {
             <div className="border-2 border-white border-opacity-50 rounded-[3rem] px-8 py-4">
               <nav className="flex space-x-10">
                 <Link href="/">
-                  <span className={`text-white font-medium hover:text-primary-orange transition duration-150 ${location === "/" ? "text-primary-orange" : ""}`}>
+                  <span className={`text-white font-tilt hover:text-primary-orange transition duration-150 ${location === "/" ? "text-primary-orange" : ""}`}>
                     Home
                   </span>
                 </Link>
                 <Link href="/locations">
-                  <span className={`text-white font-medium hover:text-primary-orange transition duration-150 ${location === "/locations" ? "text-primary-orange" : ""}`}>
+                  <span className={`text-white font-tilt hover:text-primary-orange transition duration-150 ${location === "/locations" ? "text-primary-orange" : ""}`}>
                     Our Gym Location
                   </span>
                 </Link>
@@ -74,7 +74,7 @@ export default function Header() {
                   className="bg-white bg-opacity-10 rounded-full px-6 py-1 flex items-center cursor-pointer"
                   onClick={() => setSearchOpen(true)}
                 >
-                  <span className="text-white mr-4">Search</span>
+                  <span className="text-white font-tilt mr-4">Search</span>
                   <Search className="text-white h-5 w-5" />
                 </div>
               </nav>
@@ -140,17 +140,17 @@ export default function Header() {
               <div className="bg-primary-orange rounded-2xl p-4 mt-2">
                 <nav className="flex flex-col space-y-3">
                   <Link href="/">
-                    <span className="text-white font-medium cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
+                    <span className="text-white font-tilt cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
                       Home
                     </span>
                   </Link>
                   <Link href="/locations">
-                    <span className="text-white font-medium cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
+                    <span className="text-white font-tilt cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
                       Our Gym Location
                     </span>
                   </Link>
                   <Link href="/shop">
-                    <span className="text-white font-medium cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
+                    <span className="text-white font-tilt cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
                       Shop
                     </span>
                   </Link>
@@ -176,7 +176,7 @@ export default function Header() {
       {/* Search Dialog */}
       <Dialog open={searchOpen} onOpenChange={setSearchOpen}>
         <DialogContent className="sm:max-w-[425px] bg-primary-orange">
-          <h2 className="text-white text-xl font-bold mb-4">Search</h2>
+          <h2 className="text-white text-xl font-tilt mb-4">Search</h2>
           <form onSubmit={handleSearch} className="flex items-center gap-2">
             <Input 
               autoFocus
