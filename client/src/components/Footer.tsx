@@ -1,126 +1,114 @@
 import { Link } from "wouter";
 import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock 
+  Facebook,
+  Instagram, 
+  Twitter, 
+  Linkedin
 } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-black text-white py-12">
+      <div className="container mx-auto px-6">
+        {/* Top divider */}
+        <div className="border-t border-gray-700 mb-12"></div>
+        
+        {/* Main footer content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* About */}
           <div>
-            <div className="flex items-center mb-6">
-              <div className="bg-[#FE552B] rounded-full w-12 h-12 flex items-center justify-center mr-3">
-                <i className="fas fa-paper-plane transform -rotate-45 text-white"></i>
-              </div>
-              <span className="font-tilt text-2xl">PowerFit</span>
-            </div>
-            <p className="text-gray-400 mb-6">
-              Transforming lives through fitness excellence and personalized training solutions.
+            <h3 className="font-medium text-lg mb-4">About</h3>
+            <p className="text-gray-400 text-sm mb-6">
+              At PowerFit, we believe in the power of dedication and hard 
+              work. Our mission is to provide you with the tools, resources, 
+              and community you need to build the body of your dreams.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition duration-150">
-                <i className="fab fa-facebook-f"></i>
+            <div className="flex space-x-4 items-center">
+              <span className="text-sm text-gray-400">Social Media:</span>
+              <a href="#" className="text-gray-400 hover:text-primary-orange transition duration-150">
+                <Facebook className="h-4 w-4" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition duration-150">
-                <i className="fab fa-twitter"></i>
+              <a href="#" className="text-gray-400 hover:text-primary-orange transition duration-150">
+                <Instagram className="h-4 w-4" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition duration-150">
-                <i className="fab fa-instagram"></i>
+              <a href="#" className="text-gray-400 hover:text-primary-orange transition duration-150">
+                <Twitter className="h-4 w-4" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition duration-150">
-                <i className="fab fa-linkedin-in"></i>
+              <a href="#" className="text-gray-400 hover:text-primary-orange transition duration-150">
+                <Linkedin className="h-4 w-4" />
               </a>
             </div>
           </div>
           
+          {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-xl mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="font-medium text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-white transition duration-150">
+                <Link href="/" className="hover:text-primary-orange transition duration-150">
                   <span>Home</span>
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition duration-150">
-                  <span>About Us</span>
+                <Link href="/locations" className="hover:text-primary-orange transition duration-150">
+                  <span>Our gym location</span>
                 </Link>
               </li>
               <li>
-                <Link href="/classes" className="text-gray-400 hover:text-white transition duration-150">
-                  <span>Classes</span>
+                <Link href="/contact" className="hover:text-primary-orange transition duration-150">
+                  <span>Contact Us</span>
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="text-gray-400 hover:text-white transition duration-150">
-                  <span>Shop</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white transition duration-150">
-                  <span>Contact</span>
+                <Link href="/privacy" className="hover:text-primary-orange transition duration-150">
+                  <span>Privacy policy</span>
                 </Link>
               </li>
             </ul>
           </div>
           
+          {/* Our Service */}
           <div>
-            <h3 className="font-bold text-xl mb-6">Programs</h3>
-            <ul className="space-y-3">
+            <h3 className="font-medium text-lg mb-4">Our Service</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition duration-150">Strength Training</a>
+                <a href="#" className="hover:text-primary-orange transition duration-150">Indoor gym</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition duration-150">Cardio Fitness</a>
+                <a href="#" className="hover:text-primary-orange transition duration-150">Outdoor gym</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition duration-150">Yoga & Flexibility</a>
+                <a href="#" className="hover:text-primary-orange transition duration-150">On ground gym</a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition duration-150">Personal Training</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition duration-150">Nutrition Coaching</a>
+                <a href="#" className="hover:text-primary-orange transition duration-150">Yoga class</a>
               </li>
             </ul>
           </div>
           
+          {/* Contact Info */}
           <div>
-            <h3 className="font-bold text-xl mb-6">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin className="mt-1 mr-3 text-[#FE552B] h-5 w-5" />
-                <span className="text-gray-400">123 Fitness Street, New York, NY 10001</span>
+            <h3 className="font-medium text-lg mb-4">Contact Info</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li>
+                <span className="block">Mail: info@powerfit.com</span>
               </li>
-              <li className="flex items-center">
-                <Phone className="mr-3 text-[#FE552B] h-5 w-5" />
-                <span className="text-gray-400">(123) 456-7890</span>
+              <li>
+                <span className="block">Call: +91 9976543210</span>
               </li>
-              <li className="flex items-center">
-                <Mail className="mr-3 text-[#FE552B] h-5 w-5" />
-                <span className="text-gray-400">info@powerfit.com</span>
+              <li>
+                <span className="block">Location: New York, 235 Lane, 10001</span>
               </li>
-              <li className="flex items-start">
-                <Clock className="mt-1 mr-3 text-[#FE552B] h-5 w-5" />
-                <span className="text-gray-400">Mon-Fri: 5am-11pm<br/>Sat-Sun: 7am-9pm</span>
+              <li>
+                <span className="block">Time: Workout Hours: 5AM - 8PM</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 mb-4 md:mb-0">© {new Date().getFullYear()} PowerFit. All rights reserved.</p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-500 hover:text-white transition duration-150">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-white transition duration-150">Terms of Service</a>
-              <a href="#" className="text-gray-500 hover:text-white transition duration-150">Cookie Policy</a>
-            </div>
-          </div>
+        {/* Copyright */}
+        <div className="text-center text-xs text-gray-500">
+          <p>powerfit.com©{new Date().getFullYear()} all right reserve</p>
         </div>
       </div>
     </footer>
