@@ -53,7 +53,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden" style={{ minHeight: "90vh" }}>
       {/* Background Shapes */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-1">
         <GreenLeftSidebar />
         <OrangeRightContainer />
       </div>
@@ -135,7 +135,7 @@ export default function HeroSection() {
               {/* Two boys background image */}
               <div className="absolute inset-0 -top-20 z-10 pointer-events-none">
                 <img 
-                  src="/assets/two-boys.png" 
+                  src="https://mabel-cdn.platui.com/api/v1/transform/s3?projectId=bd63e4e7-7b55-45bf-90c3-9fbcd50043bf&imageHash=ce893c6366e023172f2fd86c6f1daa7a170e4b88" 
                   alt="Two fitness enthusiasts" 
                   className="object-contain object-right-top"
                   style={{ width: "100%", height: "100%" }}
