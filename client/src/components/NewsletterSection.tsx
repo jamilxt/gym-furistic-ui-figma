@@ -40,9 +40,9 @@ export default function NewsletterSection() {
   };
   
   return (
-    <section className="py-16 md:py-24 bg-black relative overflow-hidden">
+    <section className="py-16 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center bg-black rounded-3xl p-8 md:p-12">
           <h3 className="text-white text-lg mb-2 font-tilt">Join our community</h3>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-tilt text-white mb-6">
             Subscribe to our newsletter
