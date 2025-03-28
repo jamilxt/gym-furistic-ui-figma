@@ -30,16 +30,16 @@ export default function HeroSection() {
         <div className="flex flex-col items-start">
           <span className="text-white font-tilt text-xl mb-4">Follow On:</span>
           <div className="flex space-x-4">
-            <a href="#" className="text-white hover:text-[#8ACD29] transition duration-150">
+            <a href="#" className="text-white hover:text-primary-green transition duration-150">
               <i className="fab fa-instagram text-2xl"></i>
             </a>
-            <a href="#" className="text-white hover:text-[#8ACD29] transition duration-150">
+            <a href="#" className="text-white hover:text-primary-green transition duration-150">
               <i className="fab fa-twitter text-2xl"></i>
             </a>
-            <a href="#" className="text-white hover:text-[#8ACD29] transition duration-150">
+            <a href="#" className="text-white hover:text-primary-green transition duration-150">
               <i className="fab fa-facebook text-2xl"></i>
             </a>
-            <a href="#" className="text-white hover:text-[#8ACD29] transition duration-150">
+            <a href="#" className="text-white hover:text-primary-green transition duration-150">
               <i className="fab fa-linkedin text-2xl"></i>
             </a>
           </div>
@@ -49,7 +49,13 @@ export default function HeroSection() {
       {/* Vector Background Pattern */}
       <div className="absolute left-0 top-64 w-full h-full">
         <svg width="100%" height="400" viewBox="0 0 1440 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0 0H1440V300C1440 300 1200 400 720 400C240 400 0 300 0 300V0Z" fill="#71AC16" opacity="0.1"/>
+          <path d="M0 0H1440V300C1440 300 1200 400 720 400C240 400 0 300 0 300V0Z" fill="url(#gradient)" opacity="0.15"/>
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#71AC16" />
+              <stop offset="100%" stopColor="#FE552B" />
+            </linearGradient>
+          </defs>
         </svg>
       </div>
 
@@ -78,7 +84,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Power Your <span className="text-[#71AC16]">Potential</span>
+            Power Your <span className="text-primary-green">Potential</span>
           </motion.h1>
           
           <motion.p 
@@ -98,16 +104,16 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Link href="/shop">
-              <a className="group relative flex items-center bg-transparent border-2 border-white rounded-2xl px-8 py-4 w-80 hover:bg-white/10 transition duration-300">
+              <span className="group relative flex items-center bg-transparent border-2 border-white rounded-2xl px-8 py-4 w-80 hover:bg-white/10 transition duration-300 cursor-pointer">
                 <span className="text-white font-tilt uppercase text-2xl">Shop Now</span>
                 <ArrowRight className="text-white ml-auto h-6 w-6" />
-              </a>
+              </span>
             </Link>
             
             <Link href="/locations">
-              <a className="flex items-center justify-center bg-transparent border-2 border-white rounded-2xl w-16 h-16 hover:bg-white/10 transition duration-300">
+              <span className="flex items-center justify-center bg-accent-orange border-2 border-accent-orange rounded-2xl w-16 h-16 hover:bg-accent-orange/90 transition duration-300">
                 <MapPin className="text-white h-6 w-6" />
-              </a>
+              </span>
             </Link>
           </motion.div>
         </div>

@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --primary: 82 76% 38%;
+    --primary-dark: 82 76% 30%;
+    --accent: 14 99% 58%;
+    --accent-dark: 14 99% 50%;
+    --black: 0 0% 0%;
+  }
+
   * {
     @apply border-border;
   }
