@@ -1,196 +1,97 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ShoppingCart, Search } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { useCart } from "@/hooks/use-cart";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function Header() {
   const [location] = useLocation();
-  const { cartItems } = useCart();
-  const isMobile = useIsMobile();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-
-  // Handle scroll for header background
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Perform search logic here
-    console.log("Searching for:", searchQuery);
-    setSearchOpen(false);
-  };
-
-  const totalCartItems = cartItems.reduce((total, item) => total + item.quantity, 0);
-
+  const [searchActive, setSearchActive] = useState(false);
+  
   return (
-    <header className={`sticky top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8 relative">
-        {/* Logo and Navigation */}
-        <div className="flex items-center justify-between h-24">
-          {/* Logo Circle */}
+    <header className="absolute top-0 left-0 right-0 z-50">
+      <div className="flex items-center justify-between w-full p-4">
+        {/* Logo */}
+        <div className="flex items-center">
           <Link href="/">
-            <motion.div 
-              className="bg-primary-orange rounded-full w-16 h-16 md:w-24 md:h-24 flex items-center justify-center relative cursor-pointer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="transform -rotate-45">
-                <i className="fas fa-paper-plane text-white text-xl md:text-3xl"></i>
-              </div>
-            </motion.div>
+            <div className="rounded-full bg-green-500 p-4 cursor-pointer">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 9C8.10457 9 9 8.10457 9 7C9 5.89543 8.10457 5 7 5C5.89543 5 5 5.89543 5 7C5 8.10457 5.89543 9 7 9Z" fill="white"/>
+                <path d="M17 9C18.1046 9 19 8.10457 19 7C19 5.89543 18.1046 5 17 5C15.8954 5 15 5.89543 15 7C15 8.10457 15.8954 9 17 9Z" fill="white"/>
+                <path d="M7 19C8.10457 19 9 18.1046 9 17C9 15.8954 8.10457 15 7 15C5.89543 15 5 15.8954 5 17C5 18.1046 5.89543 19 7 19Z" fill="white"/>
+                <path d="M17 19C18.1046 19 19 18.1046 19 17C19 15.8954 18.1046 15 17 15C15.8954 15 15 15.8954 15 17C15 18.1046 15.8954 19 17 19Z" fill="white"/>
+              </svg>
+            </div>
           </Link>
-
-          {/* Navigation Menu for Desktop */}
-          <div className="hidden lg:block">
-            <div className="border-2 border-white border-opacity-50 rounded-[3rem] px-8 py-4">
-              <nav className="flex space-x-10">
-                <Link href="/">
-                  <span className={`text-white font-tilt hover:text-primary-orange transition duration-150 ${location === "/" ? "text-primary-orange" : ""}`}>
-                    Home
-                  </span>
-                </Link>
-                <Link href="/locations">
-                  <span className={`text-white font-tilt hover:text-primary-orange transition duration-150 ${location === "/locations" ? "text-primary-orange" : ""}`}>
-                    Our Gym Location
-                  </span>
-                </Link>
-                <div className="w-px h-6 bg-white mx-2"></div>
-                <div 
-                  className="bg-white bg-opacity-10 rounded-full px-6 py-1 flex items-center cursor-pointer"
-                  onClick={() => setSearchOpen(true)}
-                >
-                  <span className="text-white font-tilt mr-4">Search</span>
-                  <Search className="text-white h-5 w-5" />
-                </div>
-              </nav>
-            </div>
-          </div>
-
-          {/* Right side buttons */}
-          <div className="flex items-center space-x-4">
-            {/* Cart button */}
-            <Link href="/shop">
-              <motion.div 
-                className="relative"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button variant="ghost" className="rounded-full text-white p-2">
-                  <ShoppingCart className="h-6 w-6" />
-                </Button>
-                {totalCartItems > 0 && (
-                  <Badge className="absolute -top-2 -right-2 bg-primary-orange text-white">
-                    {totalCartItems}
-                  </Badge>
-                )}
-              </motion.div>
-            </Link>
-
-            {/* Registration Button */}
-            <Link href="/register">
-              <motion.div 
-                className="bg-primary-orange rounded-[3rem] px-4 py-3 md:px-8 md:py-4"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="text-white font-tilt uppercase text-base md:text-xl tracking-wide">
-                  Register
-                </span>
-              </motion.div>
-            </Link>
-
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden">
-              <Button 
-                variant="ghost" 
-                className="text-white p-2"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </Button>
-            </div>
-          </div>
         </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div 
-              className="lg:hidden"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="bg-primary-orange rounded-2xl p-4 mt-2">
-                <nav className="flex flex-col space-y-3">
-                  <Link href="/">
-                    <span className="text-white font-tilt cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
-                      Home
-                    </span>
-                  </Link>
-                  <Link href="/locations">
-                    <span className="text-white font-tilt cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
-                      Our Gym Location
-                    </span>
-                  </Link>
-                  <Link href="/shop">
-                    <span className="text-white font-tilt cursor-pointer" onClick={() => setMobileMenuOpen(false)}>
-                      Shop
-                    </span>
-                  </Link>
-                  <form onSubmit={handleSearch} className="bg-white bg-opacity-10 rounded-full px-4 py-2 flex items-center">
-                    <Input 
-                      type="text" 
-                      placeholder="Search" 
-                      className="bg-transparent text-white placeholder:text-white outline-none border-none"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
+        
+        {/* Navigation */}
+        <div className="relative flex-1 max-w-md mx-auto">
+          <nav className="bg-primary rounded-full px-6 py-3 flex items-center text-white">
+            <div className="flex-1 flex justify-center space-x-8">
+              <Link href="/">
+                <span className={cn(
+                  "font-medium hover:text-white/80 transition-colors cursor-pointer",
+                  isActive("/") && "text-white font-semibold"
+                )}>
+                  Home
+                </span>
+              </Link>
+              <Link href="/gym-locations">
+                <span className={cn(
+                  "font-medium hover:text-white/80 transition-colors cursor-pointer",
+                  isActive("/gym-locations") && "text-white font-semibold"
+                )}>
+                  Our Gym Location
+                </span>
+              </Link>
+            </div>
+            
+            <div className="flex items-center ml-4">
+              <div className="relative">
+                {searchActive ? (
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center">
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      className="bg-transparent border-b border-white/30 text-white placeholder-white/50 outline-none px-2 py-1 w-32"
+                      autoFocus
                     />
-                    <Button type="submit" variant="ghost" className="p-0">
-                      <Search className="text-white h-4 w-4" />
-                    </Button>
-                  </form>
-                </nav>
+                    <button 
+                      onClick={() => setSearchActive(false)}
+                      className="ml-2 text-white hover:text-white/80"
+                    >
+                      <X className="h-5 w-5" />
+                    </button>
+                  </div>
+                ) : (
+                  <button 
+                    onClick={() => setSearchActive(true)}
+                    className="text-white hover:text-white/80 flex items-center"
+                  >
+                    <span className="mr-2">Search</span>
+                    <Search className="h-5 w-5" />
+                  </button>
+                )}
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Search Dialog */}
-      <Dialog open={searchOpen} onOpenChange={setSearchOpen}>
-        <DialogContent className="sm:max-w-[425px] bg-primary-orange">
-          <h2 className="text-white text-xl font-tilt mb-4">Search</h2>
-          <form onSubmit={handleSearch} className="flex items-center gap-2">
-            <Input 
-              autoFocus
-              placeholder="Search for anything..." 
-              className="bg-white/20 border-white/30 text-white placeholder:text-white/70"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <Button type="submit" className="bg-white text-primary-orange hover:bg-white/90">
-              <Search className="h-4 w-4" />
+            </div>
+          </nav>
+        </div>
+        
+        {/* Register button */}
+        <div className="flex items-center">
+          <Link href="/register">
+            <Button className="bg-green-500 hover:bg-green-600 text-white rounded-full px-8 py-2 font-semibold">
+              REGISTER
             </Button>
-          </form>
-        </DialogContent>
-      </Dialog>
+          </Link>
+        </div>
+      </div>
     </header>
   );
+}
+
+function isActive(path: string) {
+  const [location] = useLocation();
+  return location === path;
 }
